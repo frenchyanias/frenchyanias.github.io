@@ -159,20 +159,20 @@
               <strong>Thank you</strong> I have received your message
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <form name="jwd-profil-saya">
+            <form name="Form-Contact">
               <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
+                <input type="text" class="form-control" id="name" aria-describedby="name" name="Name" />
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" name="email" />
+                <input type="email" class="form-control" id="email" aria-describedby="email" name="Email" />
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Testimonials</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="pesan"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Testimonials"></textarea>
               </div>
-              <button type="submit" class="btn btn-success btn-kirim">Kirim</button>
+              <button type="submit" class="btn btn-primary btn-kirim">Send</button>
 
               <button class="btn btn-primary btn-loading d-none" type="button" disabled>
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
@@ -197,5 +197,34 @@
     </footer>
     <!-- Akhir Footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycby3D9DCKKqQ12Ihs3BuQXEvFKrK0O4_GYcCKCRDHGAPNLNlv86K9E902kbOTiK2RB6B/exec';
+
+      const form = document.forms['Form-Contact'];
+      const btnKirim = document.querySelector('.btn-kirim');
+      const btnLoading = document.querySelector('.btn-loading');
+      const myAlert = document.querySelector('.my-alert');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        //ketika tombol submit diklik
+        //tampilkan tombol loading, hilangkan tombol kirim
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then((response) => {
+            // Tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            // Tampilkan alert
+            myAlert.classList.toggle('d-none');
+            //reset formnya
+            form.reset();
+            console.log('Success!', response);
+          })
+          .catch((error) => console.error('error', error.message));
+      });
+    </script>
   </body>
 </html>
