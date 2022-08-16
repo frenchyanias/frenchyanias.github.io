@@ -1,0 +1,16 @@
+body {
+  min-height: 2000px;
+}
+
+.jumbotron {
+  padding-top: 7rem;
+  background-color: #76dbe9;
+}
+
+#Masterpiece {
+  background-color: #76dbe9;
+}
+
+section {
+  padding-top: 4rem;
+}
