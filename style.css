@@ -3,7 +3,7 @@
   background-color: #76dbe9;
 }
 
-#Masterpiece {
+#Project {
   background-color: #76dbe9;
 }
 
@@ -76,7 +76,7 @@ section {
 }
 
 .astronaut-box:hover .astronaut-name {
-  top: 8px;
+  top: 10px;
   opacity: 2;
 }
 
