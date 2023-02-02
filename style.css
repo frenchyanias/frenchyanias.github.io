@@ -22,7 +22,7 @@ section {
 
 /* The Astronaut Section*/
 
-.astronaut-box {
+.certificate-box {
   position: relative;
   background-color: #69a0b9;
   border-radius: 10px;
@@ -30,8 +30,8 @@ section {
   transform-style: preserve-3d;
 }
 
-.astronaut-box::before {
-  content: 'The';
+.certificate-box::before {
+  content: 'My';
   position: absolute;
   color: #fff;
   font-size: 4.3em;
@@ -44,14 +44,14 @@ section {
   transition: 0.5s;
 }
 
-.astronaut-box:hover::before {
+.certificate-box:hover::before {
   left: 10%;
   transform: translate(50);
   opacity: 0.4;
 }
 
-.astronaut-box::after {
-  content: 'Astronaut';
+.certificate-box::after {
+  content: 'Certificate';
   position: absolute;
   color: #fff;
   font-size: 4.3em;
@@ -64,13 +64,13 @@ section {
   transition: 0.5s;
 }
 
-.astronaut-box:hover::after {
+.certificate-box:hover::after {
   right: 5%;
   transform: translate(-50);
   opacity: 0.2;
 }
 
-.astronaut-name {
+.certificate-name {
   position: absolute;
   top: 0;
   width: 100%;
@@ -81,12 +81,12 @@ section {
   transition: 0.5s;
 }
 
-.astronaut-box:hover .astronaut-name {
+.certificate-box:hover .certificate-name {
   top: 10px;
   opacity: 2;
 }
 
-.astronaut-detail-button {
+.certificate-detail-button {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -95,12 +95,12 @@ section {
   transition: 0.5s;
 }
 
-.astronaut-box:hover .astronaut-detail-button {
+.certificate-box:hover .certificate-detail-button {
   opacity: 1;
   bottom: 20px;
 }
 
-.astronaut-img {
+.certificate-img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -109,6 +109,6 @@ section {
   transition: 0.5s;
 }
 
-.astronaut-box:hover .astronaut-img {
+.certificate-box:hover .certificate-img {
   transform: translate(-50%, -52%, 100px) rotate(5deg) scale(1.2);
 }
